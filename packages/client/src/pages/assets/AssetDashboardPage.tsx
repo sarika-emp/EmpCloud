@@ -43,12 +43,23 @@ export default function AssetDashboardPage() {
 
   if (!stats) return null;
 
-  const statCards = [
-    { label: "Total Assets", value: stats.total, icon: Package, color: "text-gray-900 bg-gray-50" },
-    { label: "Available", value: stats.available, icon: Box, color: "text-green-700 bg-green-50" },
-    { label: "Assigned", value: stats.assigned, icon: UserCheck, color: "text-blue-700 bg-blue-50" },
-    { label: "In Repair", value: stats.in_repair, icon: Wrench, color: "text-yellow-700 bg-yellow-50" },
-    { label: "Lost / Damaged", value: (stats.lost || 0) + (stats.damaged || 0), icon: AlertTriangle, color: "text-red-700 bg-red-50" },
+  // Each card drills into /assets with the matching status filter — the
+  // AssetListPage already reads `status` from the query string. Total Assets
+  // drops the filter entirely. "Lost / Damaged" defaults to status=lost;
+  // the list page does not yet support a multi-status filter, so a follow-up
+  // could surface a combined view.
+  const statCards: {
+    label: string;
+    value: number;
+    icon: typeof Package;
+    color: string;
+    href: string;
+  }[] = [
+    { label: "Total Assets", value: stats.total, icon: Package, color: "text-gray-900 bg-gray-50", href: "/assets" },
+    { label: "Available", value: stats.available, icon: Box, color: "text-green-700 bg-green-50", href: "/assets?status=available" },
+    { label: "Assigned", value: stats.assigned, icon: UserCheck, color: "text-blue-700 bg-blue-50", href: "/assets?status=assigned" },
+    { label: "In Repair", value: stats.in_repair, icon: Wrench, color: "text-yellow-700 bg-yellow-50", href: "/assets?status=in_repair" },
+    { label: "Lost / Damaged", value: (stats.lost || 0) + (stats.damaged || 0), icon: AlertTriangle, color: "text-red-700 bg-red-50", href: "/assets?status=lost" },
   ];
 
   return (
@@ -67,12 +78,17 @@ export default function AssetDashboardPage() {
         </Link>
       </div>
 
-      {/* Stat Cards */}
+      {/* Stat Cards — each drills into the filtered asset list */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         {statCards.map((card) => {
           const Icon = card.icon;
           return (
-            <div key={card.label} className="bg-white rounded-xl border border-gray-200 p-4">
+            <Link
+              key={card.label}
+              to={card.href}
+              aria-label={`View ${card.label} assets`}
+              className="bg-white rounded-xl border border-gray-200 p-4 transition hover:border-brand-400 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
+            >
               <div className="flex items-center gap-3">
                 <div className={`p-2 rounded-lg ${card.color}`}>
                   <Icon className="h-5 w-5" />
@@ -82,7 +98,7 @@ export default function AssetDashboardPage() {
                   <p className="text-xs text-gray-500">{card.label}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
