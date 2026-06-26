@@ -2044,6 +2044,7 @@
     "searchPlaceholder": "Pesquisar por nome, cargo ou departamento...",
     "clearSearch": "Limpar pesquisa",
     "downloadPng": "Baixar como PNG",
-    "downloadPdf": "Baixar como PDF (A3 paisagem)"
+    "downloadPdf": "Baixar como PDF (A3 paisagem)",
+    "loading": "Carregando organograma..."
   }
 }
