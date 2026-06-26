@@ -2050,6 +2050,8 @@
     "zoomIn": "Vergrößern",
     "zoomOut": "Verkleinern",
     "fullscreen": "Vollbild umschalten",
-    "panHint": "Scrollen zum Zoomen · Ziehen zum Verschieben"
+    "panHint": "Scrollen zum Zoomen · Ziehen zum Verschieben",
+    "noDesignation": "Keine Funktion",
+    "noMatches": "Keine Treffer."
   }
 }

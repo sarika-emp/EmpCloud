@@ -2050,6 +2050,8 @@
     "zoomIn": "Zoomer",
     "zoomOut": "Dézoomer",
     "fullscreen": "Plein écran",
-    "panHint": "Faites défiler pour zoomer · Glissez pour déplacer"
+    "panHint": "Faites défiler pour zoomer · Glissez pour déplacer",
+    "noDesignation": "Aucune fonction",
+    "noMatches": "Aucun résultat."
   }
 }
