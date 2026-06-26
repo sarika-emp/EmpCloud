@@ -2031,5 +2031,8 @@
       "publishing": "Wird veröffentlicht...",
       "publish": "Beitrag veröffentlichen"
     }
+  },
+  "orgChart": {
+    "title": "Organigramm"
   }
 }

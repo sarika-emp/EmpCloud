@@ -2031,5 +2031,8 @@
       "publishing": "发布中...",
       "publish": "发布帖子"
     }
+  },
+  "orgChart": {
+    "title": "组织结构图"
   }
 }
