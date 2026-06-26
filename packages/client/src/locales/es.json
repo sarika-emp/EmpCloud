@@ -2033,6 +2033,7 @@
     }
   },
   "orgChart": {
-    "title": "Organigrama"
+    "title": "Organigrama",
+    "subtitle": "Visualiza la estructura jerárquica de toda tu organización."
   }
 }

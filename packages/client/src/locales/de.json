@@ -2033,6 +2033,7 @@
     }
   },
   "orgChart": {
-    "title": "Organigramm"
+    "title": "Organigramm",
+    "subtitle": "Visualisieren Sie die Berichtsstruktur Ihrer gesamten Organisation."
   }
 }
