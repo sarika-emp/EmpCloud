@@ -2042,6 +2042,7 @@
     "departments": "Services",
     "viewAllDepartments": "Voir tous les services",
     "searchPlaceholder": "Rechercher par nom, fonction ou service...",
-    "clearSearch": "Effacer la recherche"
+    "clearSearch": "Effacer la recherche",
+    "downloadPng": "Télécharger en PNG"
   }
 }
